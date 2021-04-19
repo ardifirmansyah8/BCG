@@ -13,10 +13,11 @@ export const useIdeas = () => {
 
   const createNewIdea = () => {
     const id = localStorage.getItem("idCounter");
+    const data = ideas ? [...ideas] : [];
 
     localStorage.setItem("idCounter", Number(id) + 1 || "1");
     setIdeas([
-      ...ideas,
+      ...data,
       {
         id: Number(id) + 1 || "1",
         body: "",

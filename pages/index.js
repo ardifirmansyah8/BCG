@@ -14,14 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ToastContainer
-        position="top-right"
-        autoClose={2000}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-      />
+      <ToastContainer autoClose={2000} hideProgressBar />
 
       <div className="container">
         <div className="toolbar">
@@ -40,7 +33,7 @@ export default function Home() {
         </div>
 
         <div className="tiles-container">
-          {ideas || ideas.length === 0 && <div>No Idea</div>)}
+          {(!ideas || ideas.length === 0) && <div>No Idea</div>}
 
           {ideas?.length > 0 &&
             ideas.map(idea => (
