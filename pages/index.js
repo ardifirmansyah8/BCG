@@ -40,7 +40,7 @@ export default function Home() {
         </div>
 
         <div className="tiles-container">
-          {ideas?.length === 0 && <div>No Idea</div>}
+          {ideas || ideas.length === 0 && <div>No Idea</div>)}
 
           {ideas?.length > 0 &&
             ideas.map(idea => (
